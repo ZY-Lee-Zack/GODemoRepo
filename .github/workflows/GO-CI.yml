@@ -40,10 +40,14 @@ jobs:
         path: remoteRepo
         token: ${{ secrets.GO_REMOTE }}
         
-    - name: Check files
+    - name: Check Files
       run: |
         ls
         cd remoteRepo
         ls
         cat myText.txt
         cd ..
+
+    - name: Install Dependencies
+      run: |
+        go get github.com/franela/goblin
